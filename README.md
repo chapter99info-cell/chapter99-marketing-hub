@@ -10,6 +10,10 @@ Reels 9:16 แบบใช้ซ้ำได้ สำหรับ Trip2Talk แ
 
 ดูตัวอย่างแบบสดและแก้ค่าได้ที่ `npm run dev` (Remotion Studio)
 
+## เทมเพลต
+- **001/002 TipsReel** (`src/TipsReel.tsx`): พื้นลายจุด + การ์ดเคล็ดลับเป็นข้อ ๆ → CTA ใช้กับ `reels/trip2talk-tasmania.json`, `reels/chapter99-massage.json`
+- **003 PhotoCaptionReel** (`src/PhotoCaptionReel.tsx`): รูปหรือวิดีโอเต็มจอ + กล่องข้อความสีขาวเล็ก ๆ ค่อย ๆ พิมพ์ขึ้นทีละกล่อง แต่ละฉากกำหนด `photo` (public/photos) หรือ `video` (public/videos), `seconds` และ `captions` (text, at = วินาที, x/y = % ตำแหน่ง, size) ตัวอย่าง: `reels/003-trip2talk-spring.json`
+
 ## โครงสร้าง
 - `src/TipsReel.tsx` — เทมเพลต: Hook → การ์ดเคล็ดลับเป็นข้อ ๆ → CTA
 - `src/fonts.ts` — ฟอนต์ Kanit (ไทย + อังกฤษ) โหลดจาก `public/fonts`

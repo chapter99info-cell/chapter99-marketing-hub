@@ -6,6 +6,13 @@ import { TipsReel, TipsReelProps, reelDurationInFrames, tipsReelSchema } from ".
 import { fontsReady } from "./fonts";
 import tasmania from "../reels/trip2talk-tasmania.json";
 import massage from "../reels/chapter99-massage.json";
+import t003spring from "../reels/003-trip2talk-spring.json";
+import {
+  PhotoCaptionProps,
+  PhotoCaptionReel,
+  photoCaptionDuration,
+  photoCaptionSchema,
+} from "./PhotoCaptionReel";
 
 const FPS = 30;
 
@@ -18,6 +25,11 @@ const reels: { id: string; props: TipsReelProps }[] = [
 const calculateMetadata: CalculateMetadataFunction<TipsReelProps> = async ({ props }) => {
   await fontsReady;
   return { durationInFrames: reelDurationInFrames(props, FPS) };
+};
+
+const calculateMetadata003: CalculateMetadataFunction<PhotoCaptionProps> = async ({ props }) => {
+  await fontsReady;
+  return { durationInFrames: photoCaptionDuration(props, FPS) };
 };
 
 export const RemotionRoot: React.FC = () => (
@@ -36,5 +48,17 @@ export const RemotionRoot: React.FC = () => (
         height={1920}
       />
     ))}
+    {/* Template 003 — photo/video + white note captions */}
+    <Composition
+      id="T003-Trip2Talk-Spring"
+      component={PhotoCaptionReel}
+      schema={photoCaptionSchema}
+      defaultProps={t003spring as PhotoCaptionProps}
+      calculateMetadata={calculateMetadata003}
+      durationInFrames={photoCaptionDuration(t003spring as PhotoCaptionProps, FPS)}
+      fps={FPS}
+      width={1080}
+      height={1920}
+    />
   </>
 );
