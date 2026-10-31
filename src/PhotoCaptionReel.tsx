@@ -28,6 +28,7 @@ export const captionSchema = z.object({
 export const sceneSchema = z.object({
   photo: z.string().optional(), // file in public/photos
   video: z.string().optional(), // file in public/videos
+  start: z.number().optional(), // seconds into the video to start from
   seconds: z.number(),
   captions: z.array(captionSchema),
 });
@@ -47,13 +48,18 @@ const graphemes = (t: string) =>
   Array.from(new Intl.Segmenter("th", { granularity: "grapheme" }).segment(t), (g) => g.segment);
 
 // ---------- Background: photo with slow zoom, or video, or soft sky fallback ----------
-const Background: React.FC<{ photo?: string; video?: string }> = ({ photo, video }) => {
+const Background: React.FC<{ photo?: string; video?: string; start?: number }> = ({
+  photo,
+  video,
+  start,
+}) => {
   const frame = useCurrentFrame();
-  const { durationInFrames } = useVideoConfig();
+  const { durationInFrames, fps } = useVideoConfig();
   if (video) {
     return (
       <Video
         src={staticFile(`videos/${video}`)}
+        trimBefore={Math.round((start ?? 0) * fps)}
         muted
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
@@ -129,7 +135,7 @@ const Scene: React.FC<{ scene: z.infer<typeof sceneSchema> }> = ({ scene }) => {
   const len = Math.round(scene.seconds * fps);
   return (
     <AbsoluteFill>
-      <Background photo={scene.photo} video={scene.video} />
+      <Background photo={scene.photo} video={scene.video} start={scene.start} />
       {scene.captions.map((c, i) => {
         const from = Math.round(c.at * fps);
         return (

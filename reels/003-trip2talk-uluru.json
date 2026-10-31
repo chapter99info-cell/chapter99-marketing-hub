@@ -1,0 +1,32 @@
+{
+  "brand": "TRIP2TALK",
+  "scenes": [
+    {
+      "video": "uluru-outfits.mp4",
+      "start": 0,
+      "seconds": 4.3,
+      "captions": [
+        { "text": "อยากเห็นอูลูรูกับตาตัวเองสักครั้ง…", "at": 0.2, "x": 8, "y": 9 },
+        { "text": "แสงเช้าสีส้มแดง", "at": 1.8, "x": 36, "y": 17, "size": 32 }
+      ]
+    },
+    {
+      "video": "uluru-outfits.mp4",
+      "start": 4.3,
+      "seconds": 4.3,
+      "captions": [
+        { "text": "แต่งตัวยังไงดี?", "at": 0.2, "x": 8, "y": 9, "size": 42 },
+        { "text": "เช้าหนาว กลางวันร้อน ใส่เป็นชั้น ๆ ไว้", "at": 1.5, "x": 26, "y": 16, "size": 32 }
+      ]
+    },
+    {
+      "video": "uluru-outfits.mp4",
+      "start": 8.6,
+      "seconds": 4.4,
+      "captions": [
+        { "text": "ไปด้วยกันไหม?", "at": 0.2, "x": 8, "y": 9, "size": 44 },
+        { "text": "ทักเพจ Trip2Talk", "at": 1.5, "x": 36, "y": 17, "size": 32 }
+      ]
+    }
+  ]
+}

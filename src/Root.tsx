@@ -7,6 +7,7 @@ import { fontsReady } from "./fonts";
 import tasmania from "../reels/trip2talk-tasmania.json";
 import massage from "../reels/chapter99-massage.json";
 import t003spring from "../reels/003-trip2talk-spring.json";
+import t003uluru from "../reels/003-trip2talk-uluru.json";
 import {
   PhotoCaptionProps,
   PhotoCaptionReel,
@@ -49,16 +50,22 @@ export const RemotionRoot: React.FC = () => (
       />
     ))}
     {/* Template 003 — photo/video + white note captions */}
+    {[
+      { id: "T003-Trip2Talk-Spring", props: t003spring as PhotoCaptionProps },
+      { id: "T003-Trip2Talk-Uluru", props: t003uluru as PhotoCaptionProps },
+    ].map((r) => (
     <Composition
-      id="T003-Trip2Talk-Spring"
+      key={r.id}
+      id={r.id}
       component={PhotoCaptionReel}
       schema={photoCaptionSchema}
-      defaultProps={t003spring as PhotoCaptionProps}
+      defaultProps={r.props}
       calculateMetadata={calculateMetadata003}
-      durationInFrames={photoCaptionDuration(t003spring as PhotoCaptionProps, FPS)}
+      durationInFrames={photoCaptionDuration(r.props, FPS)}
       fps={FPS}
       width={1080}
       height={1920}
     />
+    ))}
   </>
 );
