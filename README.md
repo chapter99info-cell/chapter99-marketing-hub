@@ -1,54 +1,20 @@
-# Remotion video
+# Chapter99 Marketing Hub — Reel Maker
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Reels 9:16 แบบใช้ซ้ำได้ สำหรับ Trip2Talk และ Chapter99 สร้างด้วย [Remotion](https://www.remotion.dev) + Remotion Agent Skills (`.agents/skills`)
 
-Welcome to your Remotion project!
+## ทำรีลใหม่
+1. ก๊อปไฟล์ใน `reels/` แล้วแก้ข้อความ (hook, tips, cta, สี accent)
+2. ถ้ามีรูป ใส่ไว้ใน `public/photos/` แล้วใส่ชื่อไฟล์ใน `"photo"` ของแต่ละ tip
+3. ลงทะเบียนไฟล์ใหม่ใน `src/Root.tsx` (ในรายการ `reels`)
+4. Render: `npx remotion render <Composition-ID> out/<name>.mp4`
 
-## Commands
+ดูตัวอย่างแบบสดและแก้ค่าได้ที่ `npm run dev` (Remotion Studio)
 
-**Install Dependencies**
+## โครงสร้าง
+- `src/TipsReel.tsx` — เทมเพลต: Hook → การ์ดเคล็ดลับเป็นข้อ ๆ → CTA
+- `src/fonts.ts` — ฟอนต์ Kanit (ไทย + อังกฤษ) โหลดจาก `public/fonts`
+- `reels/*.json` — เนื้อหาของรีลแต่ละตัว
 
-```console
-npm i --loglevel=error
-```
-
-**Start Preview**
-
-```console
-npm run dev
-```
-
-**Render video**
-
-```console
-npx remotion render
-```
-
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+## หมายเหตุ
+- Remotion ฟรีสำหรับทีมไม่เกิน 3 คน (ดู remotion.pro/license)
+- บนเครื่องที่ไม่มี Chrome ให้ใส่ `--browser-executable=<path-to-chrome>`

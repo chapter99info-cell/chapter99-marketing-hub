@@ -1,0 +1,29 @@
+{
+  "brand": "Trip2Talk",
+  "accent": "#D7332B",
+  "hook": { "pre": "3 เหตุผลที่", "accent": "ต้องไปแทสเมเนีย", "post": "สักครั้งในชีวิต" },
+  "tips": [
+    {
+      "label": "FIRST",
+      "kicker": "you might think",
+      "title": "บินไม่ถึง 2 ชม.",
+      "body": "จากซิดนีย์ถึงโฮบาร์ตแป๊บเดียว ได้ธรรมชาติเหมือนอีกโลก"
+    },
+    {
+      "label": "SECOND",
+      "kicker": "photographer's pick",
+      "title": "แสงสวยทั้งวัน",
+      "body": "Cradle Mountain, Wineglass Bay จุดถ่ายรูปที่ช่างภาพตามหา"
+    },
+    {
+      "label": "THIRD",
+      "kicker": "eat like a local",
+      "title": "ของกินสดถึงที่",
+      "body": "หอยนางรม แซลมอน ชีส จากฟาร์มส่งตรงถึงโต๊ะ"
+    }
+  ],
+  "cta": { "title": "ไปด้วยกันไหม?", "sub": "ทักเพจ Trip2Talk ได้เลย" },
+  "hookSeconds": 3,
+  "tipSeconds": 4,
+  "ctaSeconds": 3
+}
