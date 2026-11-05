@@ -1,0 +1,7 @@
+{
+  "brand": "TRIP2TALK",
+  "accent": "#FFD23F",
+  "captionTop": 66,
+  "wordsPerPageMs": 900,
+  "clips": [{ "edit": "my-clip.json" }]
+}

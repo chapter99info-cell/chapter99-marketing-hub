@@ -14,6 +14,13 @@ import {
   photoCaptionDuration,
   photoCaptionSchema,
 } from "./PhotoCaptionReel";
+import {
+  TalkingReel,
+  TalkingReelProps,
+  calculateTalkingMetadata,
+  talkingReelSchema,
+} from "./TalkingReel";
+import t004example from "../reels/004-talking-example.json";
 
 const FPS = 30;
 
@@ -66,6 +73,21 @@ export const RemotionRoot: React.FC = () => (
       width={1080}
       height={1920}
     />
+    ))}
+    {/* Template 004 — talking clip, dead air cut, word-synced captions */}
+    {[{ id: "T004-Talking-Example", props: t004example as TalkingReelProps }].map((r) => (
+      <Composition
+        key={r.id}
+        id={r.id}
+        component={TalkingReel}
+        schema={talkingReelSchema}
+        defaultProps={r.props}
+        calculateMetadata={calculateTalkingMetadata}
+        durationInFrames={90}
+        fps={FPS}
+        width={1080}
+        height={1920}
+      />
     ))}
   </>
 );

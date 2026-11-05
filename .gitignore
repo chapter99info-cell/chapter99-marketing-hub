@@ -5,3 +5,12 @@ dist
 
 # Ignore the output video from Git but not videos you import into src/.
 out
+
+# Whisper binary + models (large, downloaded on first `npm run prep`)
+.whisper
+
+# Raw footage stays local (too big for Git); keep the folders
+public/recordings/*
+!public/recordings/.gitkeep
+public/screen-recordings/*
+!public/screen-recordings/.gitkeep
